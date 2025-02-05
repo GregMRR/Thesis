@@ -1,0 +1,250 @@
+\documentclass[11pt]{report}
+
+%here the thesis is composed
+
+%to handle svg files and graphics
+\usepackage{svg}  
+\usepackage{graphicx}  
+\usepackage{transparent}
+%to handle overlaying text
+\usepackage[absolute,overlay]{textpos} 
+
+%to highlight stuff
+\usepackage{color,soul}
+
+% to eliminate the box and change the font color of links
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor=black,
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+%to have the fourier font (very nice) without it uses computern modern
+\usepackage{fourier}
+%\usepackage{newtxtext,newtxtext}
+%to set the old school smooth p22 font (locally sourced)
+\usepackage{fontspec}
+\setmainfont{P22MayflowerSmooth}[
+    Path = ./fontchosen/,
+    Extension = .ttf
+]
+
+%%%%%%%%%%%MATH SETTINGS%%%%%%%%%%%%%%%%%
+%to have better math formatting
+\usepackage{amsmath}
+%adding the section number to the equation
+\numberwithin{equation}{section}
+
+%to have math font serif
+\usepackage{amsfonts}
+%\usepackage[mathrm=sym]{unicode-math}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%to manage the geometry of the page (will have to find a way to increase alterned margins to allow for double printed binding)
+\usepackage[top=2.5 cm, bottom=2 cm, left=2 cm,right=2 cm]{geometry}
+
+%to manage itemize lists
+\usepackage{enumitem}
+\setlist[itemize,1]{label=\textbf{\dagger}}
+
+%what does it do?
+\usepackage{bookmark}
+\frenchspacing % To avoid double spacing after punctuation
+
+%%%%%FOOTNOTES SETTINGS%%%%%%%%
+%to reset the footnote counter each page
+\usepackage{perpage}
+\MakePerPage[2]{footnote}
+%to have symbols instead of numbers
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%to erase the footnote rule
+%\renewcommand\footnoterule{}
+
+%%%%%%%%%%%SECTION SETTINGS%%%%%%%%%%%%%%%%%%%%
+%to start subsections with the old section symbol
+\renewcommand{\thesubsection}{\textsection \arabic{section}.\arabic{subsection}}
+%to add roman numerals to section
+\renewcommand{\thesection}{\Roman{section}}
+
+
+%%%%%%%%%%HEADERS%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%to clear all previous settings
+\fancyhf{} 
+%to add the section number and the page number to the header
+\fancyhead[C]{\small \bfseries{CHAPTER} \thesection}
+\fancyhead[L]{} 
+\fancyhead[R]{\thepage}
+%to remove the black line
+\renewcommand{\headrulewidth}{0pt}
+
+%to change also the style used by Tableofcontents and bibliography
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[R]{\thepage}
+    \fancyfoot{}
+}
+
+%to have a custom header for the introduction first page
+\fancypagestyle{intro1}{
+    \fancyhf{}  
+    \fancyhead[C]{}  
+    \fancyhead[R]{\thepage}  
+    \renewcommand{\headrulewidth}{0pt}  
+}
+%to have a custom header for the introduction other pages
+\fancypagestyle{intro2}{
+    \fancyhf{}  
+    \fancyhead[C]{\small \bfseries{INTRODUCTION}}  
+    \fancyhead[R]{\thepage}  
+    \renewcommand{\headrulewidth}{0pt}  
+}
+
+%to recover normal header style (NOT USED FOR NOW)
+\fancypagestyle{normal}{
+    \fancyhf{}  
+    \fancyhead[C]{\small \bfseries{diobon}}  
+    \fancyhead[R]{\thepage}  
+    \renewcommand{\headrulewidth}{0pt}  
+}
+
+
+%NOT DEFINITIVE to have the section title 3 cm down with respect to the header, but it applies to every page
+%\setlength{\headsep}{3cm}
+\setlength{\headheight}{15pt}
+
+%to define the standard for sections titles and subtitles
+\usepackage[explicit]{titlesec}
+\titleformat{\section}{\centering\huge\bfseries}{}{6pt}{#1}
+\titleformat{\subsection}{\bfseries\Large}{\upshape\thesubsection}{6pt}{#1}
+%\itshape for italics
+%to adjust the spacing of the section (i call them chapters) header
+%Add a \vphantom{} before each title section otherwise it does not consider the spacing from the header
+\titlespacing{\section}{0pt}{2.5cm}{3cm}
+
+
+%%%%%%%Bibliography and table of contents%%%%%%%%%%
+\usepackage{cite}
+%not cited articles are not included
+%to center CONTENTS and BIBLIOGRAPHY
+\renewcommand{\contentsname}{\centering Contents}   % For TOC title
+\renewcommand{\bibname}{\centering Bibliography}   % For report/book
+
+%%%%%%%%%%COVER%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%custom symbols
+\newcommand{\ak}{a_k^{}}
+\newcommand{\aone}{a_1^{}}
+\newcommand{\atwo}{a_2^{}}
+\newcommand{\athree}{a_3^{}}
+\newcommand{\afour}{a_4^{}}
+\newcommand{\afive}{a_5^{}}
+\newcommand{\asix}{a_6^{}}
+\newcommand{\akstar}{a_k^{*}}
+\newcommand{\aonestar}{a_1^{*}}
+\newcommand{\atwostar}{a_2^{*}}
+\newcommand{\athreestar}{a_3^{*}}
+\newcommand{\afourstar}{a_4^{*}}
+\newcommand{\afivestar}{a_5^{*}}
+\newcommand{\asixstar}{a_6^{*}}
+
+%placeholder citations
+\newcommand{\cit}{CITAZIONE}
+
+%partial derivative with respect to time
+\newcommand{\pt}{\frac{\partial}{\partial t}}
+
+%total derivative with respect to time
+\newcommand{\dt}{\frac{d}{dt}}
+
+%hamiltonian
+\newcommand{\Ham}{\mathcal{H}}
+
+%interaction term
+\newcommand{\Tint}{\mathrm{T}}
+
+%action coordinates
+\newcommand{\mathgreg}{\mathrm}
+\newcommand{\Ia}{\mathgreg{I}^{}}
+\newcommand{\Iaz}{\mathgreg{I}^{(0)}}
+\newcommand{\Iao}{\mathgreg{I}^{(1)}}
+\newcommand{\Iat}{\mathgreg{I}^{(2)}}
+\newcommand{\Iab}{\bar{\mathgreg{I}^{}}}
+
+%angle coordinates
+\newcommand{\tha}{\theta^{}}
+\newcommand{\thaz}{\theta^{(0)}}
+\newcommand{\thao}{\theta^{(1)}}
+\newcommand{\that}{\theta^{(2)}}
+\newcommand{\thab}{\bar{\theta}^{}}
+
+%omega
+\newcommand{\omga}{\omega^{}}
+
+%Omega
+\newcommand{\Omga}{\Omega^{}}
+\newcommand{\Omgaz}{\Omega^{(0)}}
+
+%delta of thetas
+\newcommand{\deltheta}{\Delta\theta}
+\newcommand{\delthetab}{\Delta\bar{\theta}}
+%delta of Omegas
+\newcommand{\delOmegab}{\Delta\bar{\Omega}}
+
+
+\begin{document}
+
+%frontmatter uncomment to include
+%\input{head/frontmatter.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%TABLE OF CONTENTS%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  .tex files are included with \input , to compile always this main file it is important 
+%  to include  !TEX root = path/to/main.tex in every file
+%  in this case  !TEX root = ../../thesis.tex 
+
+%introduction
+%bad solutions to have different header for the intro si to manually change eat each page
+\thispagestyle{intro1}
+\input{body/Introduction/Introduction.tex}
+
+%CHAPTERS
+%chapter1
+\input{body/chapter_1/chapter_1.tex}
+
+%chapter2
+\input{body/chapter_2/chapter_2.tex}
+
+%chapter3
+\input{body/chapter_3/chapter_3.tex}
+
+%chapter4
+\input{body/chapter_4/chapter_4.tex}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%BIBLIOGRAPHY%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%without biblatex package:
+\bibliographystyle{siam}  
+\bibliography{body/chapter_1/chapter1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+
+

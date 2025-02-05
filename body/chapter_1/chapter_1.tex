@@ -1,0 +1,207 @@
+% !TEX root = ../../thesis.tex
+% dove dovresti citare qualcosa scrivi \cit 
+\newpage
+\phantom{}
+\section{Statistics of weakly nonlinear waves}
+
+\hl{INTRO (what is done in this chapter, write at the end), put citations in here \\
+It is a brief introduction, give reference for deeper understanding, Reference history of the subject (Hassleman, Zakharov, etc)}
+
+
+\subsection{Hamiltonian description of waves in continuous media}
+
+
+We first turn to the construction of a general Hamiltonian method for the description of waves travelling in continuous media. In doing this
+we greatly borrow from the exceptional treatment in \cite{Zakharov}. \\
+\hl{Questa parte iniziale può essere più o meno ampia in base al tempo a disposizione. \\
+- Hamiltoniana generica per mezzo continuo (da spazio coordinate in una scatola), notazione, commenti sulla stabilità, commenti sul fatto che possa essere
+già risultato di sviluppo pertubativo (come per le onde oceaniche) e scrittura in spazio-k con 3 onde e 4 onde, simmetrie continue e discrete }\\
+
+\hl{to the appendix: - Idea Onorato oscillatore armonico per giustificare nonrisonanza e commento su trasfomrazione canonica per eliminare termini 
+non risonanti (indirizza ad appendice per conto specifico), cita sistemi fisici in cui l'eq è a 4 onde} \\
+
+Our final Hamiltonian is 
+\begin{equation}
+    \Ham = \sum_k \omga_k \akstar \ak + \frac{1}{2} \sum_{k123} \Tint_{k123} \akstar \aonestar \atwo \athree \delta_{23}^{k1}.
+    \label{ham4}
+\end{equation}
+
+\hl{CITA IL FATTO CHE GLI INDICI DEI k SONO SOPPRESSI}
+\subsection{Resonant and non-resonant interactions}
+maybe in the appendix?
+
+\subsection{Perturbation Theory}
+
+Often in nonlinear systems no exact solutions (or few of them) are known. We now imagine ourselves in the situation where the interaction term in our Hamiltonian 
+is small enough to allow for the perturbative treatment of the equations of motion, that is the expansion of the solution in orders of some small parameter, 
+and their subsequent calculation order by order. To make the expansion clearer we write an explicit $\epsilon$ factor in front of the interaction term
+\footnote{The small parameter my be present as a constant in the Hamiltonian (for example the coupling $g$ in the Nonlinear Schrodinger equation) or 
+it may be a placeholder for the smallness of the function $\Tint_{k123}$ in a certain subdomain of k-space (\hl{for example the interaction among gravity waves in 
+the small wavenumber limit}). } . \\
+
+Following the derivation of \cite{Onorato2020} we transform to the action-angle coordinates of the unperturbed quadratic Hamiltonian
+\begin{equation}
+    a_k = \sqrt{\Ia_k}e^{-i\theta_k}
+    \label{action_angle}
+\end{equation} 
+obtaining 
+\begin{equation}
+    \Ham = \sum_k \omga_k \Ia_k + \frac{\epsilon}{2} \sum_{k123}\Tint_{k123}\sqrt{\Ia_k\Ia_1\Ia_2\Ia_3}e^{i(\theta_k + \theta_1 - \theta_2 - \theta_3)}\delta^{k1}_{23},
+\end{equation}
+by assuming that $\Tint \in \mathbb{R}$ (as is the case in a vast class of physical systems) the requirement that $\Ham \in \mathbb{R}$ implies 
+\begin{equation}
+    \Ham = \sum_k \omga_k \Ia_k + \frac{\epsilon}{2} \sum_{k123}\Tint_{k123}\sqrt{\Ia_k\Ia_1\Ia_2\Ia_3}\cos(\deltheta^{k1}_{34})\delta^{k1}_{23},
+\end{equation}
+where we defined $\deltheta^{k1}_{23}=\theta_k + \theta_1 - \theta_2 - \theta_3$. \\
+We can prove that the change of coordinates \eqref{action_angle} is canonical by assuming it to be true and recovering $\ak$ and $\akstar$'s poisson 
+brackets\footnote{Remembering that the true canonical variables are $\ak$ and $i\akstar$.} 
+\begin{align}
+    \left\{ i\akstar, \ak \right\} &= i \left( \frac{\partial \akstar}{\partial \Ia_k}\frac{\partial \ak}{\partial \theta_k}  -
+    \frac{\partial \akstar}{\partial \theta_k}\frac{\partial \ak}{\partial \Ia_k}  \right) \\
+    &= - i \left( \frac{i}{2} \frac{1}{\sqrt{\Ia_k}}e^{i\theta_k}\sqrt{\Ia_k}e^{-i\theta_k} + 
+    \frac{i}{2} \frac{1}{\sqrt{\Ia_k}}e^{-i\theta_k}\sqrt{\Ia_k}e^{i\theta_k}\right) \\
+    &= 1 .
+\end{align} 
+
+We can thus impose Hamilton equations for the new coordinates (remembering that time dependance of the coordinates is suppressed)
+
+\begin{align}
+    \dt\Ia_k &= - \frac{\partial }{\partial \theta_k}\Ham = 2 \epsilon \sum_{123} \Tint_{k123} \sqrt{\Ia_k\Ia_1\Ia_2\Ia_3} \sin(\deltheta^{k1}_{23})\delta^{k1}_{23}
+    \label{Hameq1}\\
+    \dt\theta_k &= \phantom{-} \frac{\partial }{\partial \Ia_k}\Ham = \omga_k + 
+    \epsilon \sum_{123} \Tint_{k123} \sqrt{\frac{\Ia_1\Ia_2\Ia_3}{\Ia_k}}\cos(\deltheta^{k1}_{23})\delta^{k1}_{23}.
+    \label{Hameq2}
+\end{align}
+
+
+Since we are essentially perturbing an infinite set of harmonical oscillators with a small interaction term, we can euristically assume that
+the coordinates cannot grow indefinetly to infinity. We shall then be weary of unphysical secular terms artificially introduced by the perturbative
+expansion. The Poincarè-Lindsted method allows us to remove such terms by a frequency shift
+\begin{equation}
+    \omga_k \rightarrow \Omga_k = \omga_k + \epsilon \left(2\sum_p \Tint_{kpkp}\Ia_p - \Tint_{kkkk}I_k \right),
+\end{equation}   
+togheter with a change of the summatory in $\Ham$ such that $k_2=k \hspace{2mm}\&\hspace{2mm} k_1 = k_3$, $k_3=k \hspace{2mm}\& \hspace{2mm}k_1=k_2$ and $k_1=k_2=k_3=k$ are excluded from it. \\
+This particular choice is better justified in the \hl{APPENDIX WITH LINK, MAKE DUFFING EXAMPLE} or in \cite{Nazarenko2011}. \\
+
+We may now develop perturbation theory, we start by expanding the (unknown) solutions as
+\begin{align}
+    \Ia_k &= \Iaz_k +  + \epsilon \Iao_k + \epsilon^2 \Iat_k + \mathcal{O}(\epsilon^3) \\
+    \tha_k &= \thaz_k +  + \epsilon \thao_k + \epsilon^2 \that_k + \mathcal{O}(\epsilon^3),
+\end{align}
+and than substituting them into \eqref{Hameq1} and \eqref{Hameq2}. \\
+We now reintroduce explicit time dependance and impose $\Iaz_k(0) = \bar{\Ia}_k$ and $\Iao_k(0) = \Iat_k(0) = 0$ to fix initial conditions on the $\Ia$s and 
+$\thaz_k(0) = \bar{\tha}_k$ and $\thao_k(0) = \that_k(0) = 0$ to fix initial conditions on the $\tha$s.\\
+
+The $\epsilon^0$ order equations are
+\begin{align}
+    \dt\Iaz_k &= 0   \\
+    \dt\thaz_k &= \Omgaz_k, 
+\end{align}
+with solutions 
+\begin{align}
+    \Iaz_k(t) &= \bar{\Ia}_k \label{solzero1}\\
+    \thaz_k(t) &= \bar{\tha}_k + \bar{\Omga}_kt, \label{solzero2}
+\end{align}
+where $\Omgaz_k$ and $\bar{\Omga}_k$ refer to $\Omga_k$ with only zeroeth order contribution or initial conditions respectively.\hl{ANGOLO HA TERMINE SECOLARE, 
+    IN EFFETTI LO METTIAMO IN LEADING ORDER DYNAMIC PROPRIO PER QUESTO MOTIVO FORSE, 
+GIUSTIFICA DOPO DICENDO CHE A NOI IMPORTA CHE AZIONE NON NE ABBIA, SICCOME ANGOLI SONO IN DEI SENI, 
+E FAI NOTARE CHE ALLA FINE IL FREQUENCY SHIFT NON IFLUENZA DINAMICA, COME ATTESO ESSENDO NLO}
+To be precise the $\epsilon$ terms in 
+the shifted frequency should be included in the equations for $\thao$ and not $\thaz$, we however make this choice to keep the term $\Omga$ in a compact form.\\
+This order reproduces the dynamics of an infinite number of integrable systems (for example decoupled harmonic oscillators), with constant actions and angles evolving linearly with time. \\
+
+At $\epsilon$ order the equations of motion are 
+\begin{align}
+    \dt\Iao_k &= 2\sum_{123} \Tint_{k123} \sqrt{\Iaz_k\Iaz_1\Iaz_2\Iaz_3} \sin(\deltheta^{k1(0)}_{23})\delta^{k1}_{23}\\
+    \dt\thao_k &= \sum_{123} \Tint_{k123} \sqrt{\frac{\Iaz_1\Iaz_2\Iaz_3}{\Iaz_k}}\cos(\deltheta^{k1(0)}_{23})\delta^{k1}_{23}.
+\end{align}
+Here the only time dependance lies in $\Delta\theta^{(0)}$ and $\Iao_k(0) = \thao_k(0) = 0$, integrating the equations gives
+\begin{align}
+    \Iao_k(t) &= 2\sum_{123} \Tint_{k123} \sqrt{\Iab_k\Iab_1\Iab_2\Iab_3} \frac{\delta^{k1}_{23}}{\delOmegab^{k1}_{23}}
+    \left[ \cos(\delthetab^{k1}_{23}) - \cos(\delthetab^{k1}_{23} + \delOmegab^{k1}_{23}t) \right] \label{solone1}\\
+    \thao_k(t) &= \sum_{123} \Tint_{k123} \sqrt{\frac{\Iab_1\Iab_2\Iab_3}{\Iab_k}} \frac{\delta^{k1}_{23}}{\delOmegab^{k1}_{23}}
+    \left[ \sin(\delthetab^{k1}_{23} + \delOmegab^{k1}_{23}t) -\sin(\delthetab^{k1}_{23}) \right]. \label{solone2}
+\end{align}
+Where $\delOmegab$ is defined in the same fashion as $\deltheta$. \\
+
+
+We should be content with this first nontrivial result, but through the sheer power of hindsight
+\footnote{Developing a statistical theory of the system, the first nontrivial contribution comes from the $\epsilon^2$ order.}
+we write also the 
+$\epsilon^2$ order equations only for the action variables (there is no need to actually solve them). \\
+Looking at \eqref{Hameq1} we seek to obtain an $\epsilon^2$ equation by substituting $\Ia$ and $\tha$ up to their $\epsilon$ order terms. By Taylor expanding the square root 
+we obtain four terms of the form
+\begin{equation}
+    \sqrt{(\mathrm{x} +\epsilon \mathrm{y})\mathrm{\tilde{x}}} \underset{\epsilon \rightarrow 0}{\sim} 
+    \sqrt{\mathrm{x}\mathrm{\tilde{x}}}\left( 1 + \frac{\epsilon \mathrm{y}}{2\mathrm{\tilde{x}}}\right),
+\end{equation}
+where, for example, $\mathrm{x} + \epsilon \mathrm{y} = \Iaz_k + \epsilon \Iao_k$ and $\mathrm{\tilde{x}} = \Iaz_1\Iaz_2\Iaz_3$.\\
+There also appear terms of the form
+\begin{equation}
+    \sin(\mathrm{x} + \epsilon \mathrm{y}) \underset{\epsilon \rightarrow 0}{\sim} \sin(\mathrm{x}) + \epsilon \mathrm{y} \cos(\mathrm{x}),
+\end{equation} 
+where $\mathrm{x} = \deltheta^{k1(0)}_{23}$ and $\mathrm{y} = \deltheta^{k1(1)}_{23}$.\\
+By plugging everything into \eqref{Hameq1} we first obtain
+\begin{equation}
+    \dt \Iat_k = 2 \sum_{123} \Tint_{k123} \sqrt{\Iaz_k\Iaz_1\Iaz_2\Iaz_3} \left[ \frac{1}{2}\left(\frac{\Iao_k}{\Iaz_k}+\frac{\Iao_1}{\Iaz_1}+
+    \frac{\Iao_2}{\Iaz_2}+\frac{\Iao_3}{\Iaz_3} \right)\sin(\deltheta^{k1(0)}_{23})\delta^{k1}_{23} + 
+    \deltheta^{k1(1)}_{23}\cos(\deltheta^{k1(0)}_{23}) \delta^{k1}_{23}\right],
+\end{equation}
+and then by using \eqref{solzero1}, \eqref{solzero2}, \eqref{solone1}, \eqref{solone2} and basic trigonometry we find
+\begin{multline}
+    \dt \Iat_k = 2 \sum_{123456}\Tint_{k123} \sqrt{\Iab_k\Iab_1\Iab_2\Iab_3\Iab_4\Iab_5\Iab_6} 
+    \sum_{i=1}^{4}\frac{\Tint_{k123}\Tint_{i456}}{\sqrt{\Iab_i}\delOmegab^{i4}_{56}} \\
+    \times\left(\sin(\delthetab^{k1}_{23} + \delOmegab^{k1}_{23}t - \sigma_i \delthetab^{i4}_{56}) 
+    + \sin(\sigma_i \delthetab^{i4}_{56} + \sigma_i\delOmegab^{i4}_{56}t -\delthetab^{k1}_{23} - \delOmegab^{k1}_{23}t)  \right)\delta^{k1}_{23}\delta^{i4}_{56}. 
+    \label{eqeps2}
+\end{multline}
+
+\subsection{Statistical description}
+Having approximated the solutions to order $\epsilon$ we found ourselves with the problem of gathering 
+initial conditions in infinite dimensonal systems
+\footnote{Let us think of the ocean surface for example, measuring its height at a generic instant would be unfeasible.}
+, we shall then renounce the deterministic approach in favour of 
+a probabilistic one.\\
+In general such idea is realized thorugh averaging over infinitely many realizations of the equations of motion with different initial conditions, to then extract 
+average quantities more easily confrontable with experiment. In a nonlinear problem this is again highly non trivial, to simplify the endeavor we assume that
+a large number of waves is present in the system, in the sense that each mode in Fourier space is highly excited. It is then reasonable to assume 
+the initial phases to be uniformly distributed in the $\left[0,2\pi\right]$ segment 
+\footnote{Unless the original equation of motions are known to have solitonic solutions in a certain regime of k-space, in such case phases could be correlated and not 
+uniformly distributed anymore.}
+. We define the averaging as
+\begin{equation}
+    \left\langle f(\bar{\tha}_1 \dots \bar{\tha}_N) \right\rangle_{\thab} = 
+    \int_{0}^{2\pi} P(\bar{\tha}_1 \dots \bar{\tha}_N)f(\bar{\tha}_1 \dots \bar{\tha}_N) d\bar{\tha}_1 \dots d\bar{\tha}_N 
+    \hspace{3mm} \text{with} \hspace{3mm}
+    P(\bar{\tha}_1 \dots \bar{\tha}_N) = \frac{1}{2\pi^{N}}
+\end{equation}
+
+Looking back at the Hamiltonian \eqref{ham4} we see that the phases do not contribute to physical quantities like the energy or the wave number, 
+it is in the action variables that those observables are encoded. We have now a clear plan, to find a kinetic equation, independent of initial conditions, for
+the action variables. \\
+THe main objective is then
+\begin{equation}
+    \left\langle \dt \Ia_k \right\rangle_{\thab} = \dt \left\langle \Ia_k \right\rangle_{\thab} = 
+    \epsilon\left\langle \dt \Iao_k \right\rangle_{\thab} + \epsilon^2\left\langle \dt \Iat_k \right\rangle_{\thab} + 
+\end{equation}
+
+
+
+\hl{-Definizione nk(t), Derivazione alla onorato della 4-WKE, limite al continuo, commenti su assunzioni!, \\
+indirizza all'Appendice per metodo Poincarè lindsted. \\
+-Derivazione alla Falkovich della wke, or referral to appendix}\\
+\subsection{Some properties of the kinetic equation}
+
+\hl{-Proprietà WKE :Irreversibilità, dimostrazione del teorema H, leggi di conservazione e equazioni di continuità}
+
+\subsection{Equilibrium stationary state}
+
+-Equilibrium solutions and comments 
+
+\subsection{Out of equilibrium stationary states}
+
+-Out of Equilibrium solutions and comments, argomento fjortoft, argomento zakharov, misto dei due con commenti su forzante e dissipazione 
+ed esempi fisici, ragionamenti dimensionali su forme approssimate di lambda e omega e forme generiche di esponenti, definizioni costanti di KZ e commenti su cnvergenza e 
+trasformata zakh un pò di foto di cascate per sistemi fisici NON MMT
+
+\subsection{Convergence issues (MAYBE)}

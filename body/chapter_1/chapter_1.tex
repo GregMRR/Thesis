@@ -34,7 +34,9 @@ maybe in the appendix?
 
 Often in nonlinear systems no exact solutions (or few of them) are known. We now imagine ourselves in the situation where the interaction term in our Hamiltonian 
 is small enough to allow for the perturbative treatment of the equations of motion, that is the expansion of the solution in orders of some small parameter, 
-and their subsequent calculation order by order. To make the expansion clearer we write an explicit $\epsilon$ factor in front of the interaction term
+and their subsequent calculation order by order. From a physical viewpoint the smalness of the interaction term corresponds to a 
+separation of the fast time scale on which the linear term operates from the slow time scale of the nonlinear one.\\
+ To make the expansion clearer we write an explicit $\epsilon$ factor in front of the interaction term
 \footnote{The small parameter my be present as a constant in the Hamiltonian (for example the coupling $g$ in the Nonlinear Schrodinger equation) or 
 it may be a placeholder for the smallness of the function $\Tint_{k123}$ in a certain subdomain of k-space (\hl{for example the interaction among gravity waves in 
 the small wavenumber limit}). } . \\
@@ -79,8 +81,11 @@ the coordinates cannot grow indefinetly to infinity. We shall then be weary of u
 expansion. The Poincarè-Lindsted method allows us to remove such terms by a frequency shift
 \begin{equation}
     \omga_k \rightarrow \Omga_k = \omga_k + \epsilon \left(2\sum_p \Tint_{kpkp}\Ia_p - \Tint_{kkkk}I_k \right),
+    \label{shift_eq}
 \end{equation}   
-togheter with a change of the summatory in $\Ham$ such that $k_2=k \hspace{2mm}\&\hspace{2mm} k_1 = k_3$, $k_3=k \hspace{2mm}\& \hspace{2mm}k_1=k_2$ and $k_1=k_2=k_3=k$ are excluded from it. \\
+togheter with a change of the summatory in $\Ham$ such that the trivial interactions\footnote{
+    we call them trivial as they do not correspond to a net exchange of energy/action among different Fourier modes
+} $k_2=k \hspace{2mm}\&\hspace{2mm} k_1 = k_3$, $k_3=k \hspace{2mm}\& \hspace{2mm}k_1=k_2$ and $k_1=k_2=k_3=k$ are excluded from it. \\
 This particular choice is better justified in the \hl{APPENDIX WITH LINK, MAKE DUFFING EXAMPLE} or in \cite{Nazarenko2011}. \\
 
 We may now develop perturbation theory, we start by expanding the (unknown) solutions as
@@ -102,17 +107,15 @@ with solutions
     \Iaz_k(t) &= \bar{\Ia}_k \label{solzero1}\\
     \thaz_k(t) &= \bar{\tha}_k + \bar{\Omga}_kt, \label{solzero2}
 \end{align}
-where $\Omgaz_k$ and $\bar{\Omga}_k$ refer to $\Omga_k$ with only zeroeth order contribution or initial conditions respectively.\hl{ANGOLO HA TERMINE SECOLARE, 
-    IN EFFETTI LO METTIAMO IN LEADING ORDER DYNAMIC PROPRIO PER QUESTO MOTIVO FORSE, 
-GIUSTIFICA DOPO DICENDO CHE A NOI IMPORTA CHE AZIONE NON NE ABBIA, SICCOME ANGOLI SONO IN DEI SENI, 
-E FAI NOTARE CHE ALLA FINE IL FREQUENCY SHIFT NON IFLUENZA DINAMICA, COME ATTESO ESSENDO NLO}
-To be precise the $\epsilon$ terms in 
-the shifted frequency should be included in the equations for $\thao$ and not $\thaz$, we however make this choice to keep the term $\Omga$ in a compact form.\\
-This order reproduces the dynamics of an infinite number of integrable systems (for example decoupled harmonic oscillators), with constant actions and angles evolving linearly with time. \\
+where $\Omgaz_k$ and $\bar{\Omga}_k$ refer to $\Omga_k$ with only zeroeth order contribution or initial conditions respectively.
+Notice that the $\epsilon$ terms in 
+the shifted frequency should be included in the equations for $\thao$ and not $\thaz$, we however make this choice to keep 
+all terms linear with time togheter (and thus leading in the expansion).\\
+This order reproduces the dynamics of an infinite dimensional integrable system (for example infinitely many decoupled harmonic oscillators), with constant actions and angles evolving linearly with time. \\
 
 At $\epsilon$ order the equations of motion are 
 \begin{align}
-    \dt\Iao_k &= 2\sum_{123} \Tint_{k123} \sqrt{\Iaz_k\Iaz_1\Iaz_2\Iaz_3} \sin(\deltheta^{k1(0)}_{23})\delta^{k1}_{23}\\
+    \dt\Iao_k &= 2\sum_{123} \Tint_{k123} \sqrt{\Iaz_k\Iaz_1\Iaz_2\Iaz_3} \sin(\deltheta^{k1(0)}_{23})\delta^{k1}_{23} \label{hameqone}\\
     \dt\thao_k &= \sum_{123} \Tint_{k123} \sqrt{\frac{\Iaz_1\Iaz_2\Iaz_3}{\Iaz_k}}\cos(\deltheta^{k1(0)}_{23})\delta^{k1}_{23}.
 \end{align}
 Here the only time dependance lies in $\Delta\theta^{(0)}$ and $\Iao_k(0) = \thao_k(0) = 0$, integrating the equations gives
@@ -125,8 +128,8 @@ Here the only time dependance lies in $\Delta\theta^{(0)}$ and $\Iao_k(0) = \tha
 Where $\delOmegab$ is defined in the same fashion as $\deltheta$. \\
 
 
-We should be content with this first nontrivial result, but through the sheer power of hindsight
-\footnote{Developing a statistical theory of the system, the first nontrivial contribution comes from the $\epsilon^2$ order.}
+We should be content with this first nontrivial result, but through the sheer power of hindsight\footnote{Developing a 
+statistical theory of the system, the first nontrivial contribution comes from the $\epsilon^2$ order.}
 we write also the 
 $\epsilon^2$ order equations only for the action variables (there is no need to actually solve them). \\
 Looking at \eqref{Hameq1} we seek to obtain an $\epsilon^2$ equation by substituting $\Ia$ and $\tha$ up to their $\epsilon$ order terms. By Taylor expanding the square root 
@@ -150,13 +153,13 @@ By plugging everything into \eqref{Hameq1} we first obtain
 and then by using \eqref{solzero1}, \eqref{solzero2}, \eqref{solone1}, \eqref{solone2} and basic trigonometry we find
 \begin{multline}
     \dt \Iat_k = 2 \sum_{123456}\Tint_{k123} \sqrt{\Iab_k\Iab_1\Iab_2\Iab_3\Iab_4\Iab_5\Iab_6} 
-    \sum_{i=1}^{4}\frac{\Tint_{k123}\Tint_{i456}}{\sqrt{\Iab_i}\delOmegab^{i4}_{56}} \\
+    \sum_{i=0}^{3}\frac{\Tint_{k123}\Tint_{i456}}{\sqrt{\Iab_i}\delOmegab^{i4}_{56}} \\
     \times\left(\sin(\delthetab^{k1}_{23} + \delOmegab^{k1}_{23}t - \sigma_i \delthetab^{i4}_{56}) 
-    + \sin(\sigma_i \delthetab^{i4}_{56} + \sigma_i\delOmegab^{i4}_{56}t -\delthetab^{k1}_{23} - \delOmegab^{k1}_{23}t)  \right)\delta^{k1}_{23}\delta^{i4}_{56}. 
+    + \sin(\sigma_i \delthetab^{i4}_{56} + \sigma_i\delOmegab^{i4}_{56}t -\delthetab^{k1}_{23} - \delOmegab^{k1}_{23}t)  \right)\delta^{k1}_{23}\delta^{i4}_{56}, 
     \label{eqeps2}
 \end{multline}
-
-\subsection{Statistical description}
+where $\sigma_i$ is equal to $+1$ if $i=0,1$ and alternatively is $-1$. When $i=0$ it represents functional dependance on $k$.\\
+\subsection{Random Phase Approximation}
 Having approximated the solutions to order $\epsilon$ we found ourselves with the problem of gathering 
 initial conditions in infinite dimensonal systems
 \footnote{Let us think of the ocean surface for example, measuring its height at a generic instant would be unfeasible.}
@@ -164,11 +167,12 @@ initial conditions in infinite dimensonal systems
 a probabilistic one.\\
 In general such idea is realized thorugh averaging over infinitely many realizations of the equations of motion with different initial conditions, to then extract 
 average quantities more easily confrontable with experiment. In a nonlinear problem this is again highly non trivial, to simplify the endeavor we assume that
-a large number of waves is present in the system, in the sense that each mode in Fourier space is highly excited. It is then reasonable to assume 
-the initial phases to be uniformly distributed in the $\left[0,2\pi\right]$ segment 
-\footnote{Unless the original equation of motions are known to have solitonic solutions in a certain regime of k-space, in such case phases could be correlated and not 
-uniformly distributed anymore.}
-. We define the averaging as
+a large number of waves is present in the system, in the sense that each mode in Fourier space is highly excited. It is then reasonable to assume that, after a time
+evolution proportional to the minimum value of $\frac{1}{\omega_k}$ in the range of physical interest, the phases $\tha$ would be uniformly distributed in the $\left[0,2\pi\right]$ segment 
+\footnote{This is known as the random phase approximation. One shall be careful as if the original equations of motion are known to have solitonic solutions in a certain regime of k-space, 
+in such case phases could be correlated and the assumption would not hold.}
+. This means that whatever our initial conditions, given that $\Iab_k \neq 0$ almost everywhere and the nonlinear contribution being slower than the linear one,
+we may actually assume some new initial conditions on $\theta$s drawn from the following distribution
 \begin{equation}
     \left\langle f(\bar{\tha}_1 \dots \bar{\tha}_N) \right\rangle_{\thab} = 
     \int_{0}^{2\pi} P(\bar{\tha}_1 \dots \bar{\tha}_N)f(\bar{\tha}_1 \dots \bar{\tha}_N) d\bar{\tha}_1 \dots d\bar{\tha}_N 
@@ -179,17 +183,154 @@ uniformly distributed anymore.}
 Looking back at the Hamiltonian \eqref{ham4} we see that the phases do not contribute to physical quantities like the energy or the wave number, 
 it is in the action variables that those observables are encoded. We have now a clear plan, to find a kinetic equation, independent of initial conditions, for
 the action variables. \\
-THe main objective is then
+The main objective is then
 \begin{equation}
-    \left\langle \dt \Ia_k \right\rangle_{\thab} = \dt \left\langle \Ia_k \right\rangle_{\thab} = 
-    \epsilon\left\langle \dt \Iao_k \right\rangle_{\thab} + \epsilon^2\left\langle \dt \Iat_k \right\rangle_{\thab} + 
+    \left\langle \dt \Ia_k \right\rangle_{\thab} = \dt \left\langle \Ia_k \right\rangle_{\thab} = \left\langle \dt \Iaz_k \right\rangle_{\thab}+
+    \epsilon\left\langle \dt \Iao_k \right\rangle_{\thab} + \epsilon^2\left\langle \dt \Iat_k \right\rangle_{\thab} 
+    \label{kineticexp}
 \end{equation}
+To zeroeth order, being constant, is null. We average over the $\epsilon$ order equation \eqref{hameqone} (with subbed zeroeth order solutions)
+\begin{equation}
+    \left\langle \dt \Iao_k \right\rangle_{\thab} = 2\sum_{123} \Tint_{k123} \sqrt{\Iab_k\Iab_1\Iab_2\Iab_3} \left\langle\sin(\delthetab^{k1}_{23} +
+    \delOmegab^{k1}_{23}t)\right\rangle_{\thab}\delta^{k1}_{23}.
+\end{equation}
+Making the probability distribution explicit and isolating the term depending on phases we obtain
+\begin{multline}
+    \left\langle\sin(\delthetab^{k1}_{23} + \delOmegab^{k1}_{23}t)\right\rangle_{\thab} = 
+    \left\langle 2 \operatorname{Im}\left(e^{i\delthetab^{k1}_{23}}e^{\delOmegab^{k1}_{23}t)} \right)   \right\rangle_{\thab} = 
+    \frac{1}{2\pi^4}\int_{0}^{2\pi}  e^{i\thab_k}e^{i\thab_1}e^{i\thab_2}e^{i\thab_3} d \thab_k d \thab_1 d \thab_2 d \thab_3 = 0
+\end{multline}
+To first order we have a trivial kinetic equation, and must then go to $\epsilon^2$ order to find nontrivial results, luckily we have already written $\Ia$'s 
+Hamilton equations to second order. \\
 
+The $\thab$ dependent part of equation \eqref{eqeps2} may be rewritten as 
+\begin{equation}
+    e^{+i\sigma_i\delthetab^{i4}_{56} -i \delthetab^{k1}_{23}}\left[e^{-i\delOmegab^{k1}_{23}}\left(e^{i\sigma_i\delOmegab^{i4}_{56}t}-1\right)  \right]
+    \label{thetaterm}
+\end{equation}
+We shall focus on the $i=0$ term and extend the results to the other ones. Isolating the exponential with $\thab$ in \eqref{thetaterm} and averaging we get
+\begin{equation}
+    \left\langle e^{i(\thab_4 +\thab_2 + \thab_3 - \thab_5 - \thab_6 - \thab_1)} \right\rangle_{\thab}.
+    \label{average}
+\end{equation} 
+This term is different from $0$ only if the total exponent is null. It acts as a Kroenecker's delta on the $3$ out of the $6$ sums, imposing either $k_4=k_1$ \& $k_2 = k_5$ \&
+$k_3 = k_6$ or $k_4=k_1$ \& $k_2 = k_6$ \& $k_3 = k_5$\footnote{The combinations with $k_2 = k_4$ or $k_2 = k_3$ were 
+excluded from the sum with the shift \eqref{shift_eq}}. \\
+The full averaged $i=0$ term, with \eqref{average} enforced, is 
+\begin{equation}
+    4 \sum_{123} \Tint_{k123}\Tint_{k123}\Iab_1\Iab_2\Iab_3\frac{\sin(\delOmegab^{k1}_{23}t)}{\delOmegab^{k1}_{23}}\delta^{k1}_{23},
+\end{equation}
+where the property $\Tint_{k123} = \Tint_{k132}$ was used\footnote{In the case of complex $\Tint$ the property would hold as well with a complex conjugate on one side.}.
+\\
+Looking at the cases $i =1,2,3$ the only differences are:
+\begin{itemize}
+    \item $i=1$ $\longrightarrow$ the same as $i=0$ except for the exchange $\Iab_1 \longleftrightarrow \Iab_k$;
+    \item $i=2$ $\longrightarrow$ the same as $i=0$ except for an overall minus sign;
+    \item $i=3$ $\longrightarrow$ the same as $i=2$ except for  $\Iab_2 \longleftrightarrow \Iab_3$.
+\end{itemize}
+The final result is
+\begin{equation}
+    \dt \left\langle \Iat_k\right\rangle = 4 \sum_{123} \Tint^2_{k123}\Iab_k\Iab_1\Iab_2\Iab_3
+    \left(\frac{1}{\Iab_k} + \frac{1}{\Iab_1} - \frac{1}{\Iab_2}- \frac{1}{\Iab_3}  \right)
+    \frac{\sin(\delOmegab^{k1}_{23}t)}{\delOmegab^{k1}_{23}}\delta^{k1}_{23},
+    \label{kinetic1}
+\end{equation}
+where it is not anymore necessary to account in the sum for trivial 
+interactions, as for \\ $k_2=k \hspace{2mm}\&\hspace{2mm} k_1 = k_3$, $k_3=k \hspace{2mm}\& \hspace{2mm}k_1=k_2$ and $k_1=k_2=k_3=k$ the r.h.s is null.\\
+We may ignore to this order the frequency shift as Taylor expanding the sine function shows its contribution to be of order $\epsilon^3$. \\
+By using one of the possible definitions of the Dirac's delta function
+\begin{equation}
+    \underset{a \rightarrow \infty}{\lim} \frac{\sin(a \mathrm{x})}{\pi\mathrm{x}} = \delta(\mathrm{x}),
+    \label{delta}
+\end{equation}
+into \eqref{kinetic1} togheter with \eqref{kineticexp} and the assumption that enough time has passed
+%\footnote{More time than the fast linear time scale and smaller tha}
+, finally
+\begin{equation}
+    \dt \left\langle \Ia_k\right\rangle = 4 \pi\epsilon^2 \sum_{123} \Tint^2_{k123}\Iab_k\Iab_1\Iab_2\Iab_3
+    \left(\frac{1}{\Iab_k} + \frac{1}{\Iab_1} - \frac{1}{\Iab_2}- \frac{1}{\Iab_3}  \right)
+    \delta(\delomega^{k1}_{23})\delta^{k1}_{23}.
+    \label{kinetic2}
+\end{equation}
+There are some important remarks on this last equation. \\
+The presence of the Dirac's delta defines a resonance manifold\footnote{even if at this discrete stage $\delomega$ is not a function over $\mathcal{R}$ yet,
+ and should be argued to be densely valued around $0$ in the continuum limit} of the Fourier modes $k_1, k_2$ and $k_3$ interacting with $k$, 
+ showing that only resonant term contribute to the net interaction between different modes\footnote{
+    This can be seen as an a posteriori justification for the elimination of nonresonant three wave interaction terms.
+}. \\
+Based on difference preferences one could define a nonlinear time $\tau = t \epsilon^2$, as in \cite{Onorato2020}, and absorb the 
+$\epsilon^2$ term into the time derivative or just include it again into $\Tint$, we opt for the latter and will not write it explicitely in the future. \\
+The equation can be readily extended to the case $\Tint \in \mathcal{C}$ through the substitution $\Tint^2 \rightarrow |\Tint|^2$.\\
+We solved the problem of initial conditions on the phases but not yet on the action variables and we are still dealing with infinite sums, since we defined our system
+in a finite coordinate space. The next section builds on this. 
 
+\subsection{Statistics over the actions and the thermodynamic limit}
+We now take the thermodynamic (continuum) limit ($L \rightarrow \infty$) to turn our set of infinitely many coupled equation into an integral one, easier to approach analytically.
+In Fourier space the limit takes the form 
+\begin{equation}
+    \vec{\Delta k} = \frac{2\pi}{L} \rightarrow 0 \hspace{10mm} \Lambda^* \rightarrow \mathcal{R}^d
+\end{equation}
+and we define 
+\begin{equation}
+    \tilde{\Ia}_k=\frac{\Ia_k}{(\Delta k)^d} \rightarrow \tilde{\Ia}(k) \hspace{10mm} \sum_k (\Delta k)^d \rightarrow \int d^d k \hspace{10mm} 
+    \frac{(\delta^{k1}_{23})^d}{(\Delta k)^d} \rightarrow \delta^d(k + k_1 - k_2 - k_3).
+\end{equation}
+The action variables and interaction coefficents become functions of the now continuous coordinates of Fourier space, the sums turn into integrals and the Kroenecker's deltas become a
+Dirac's delta. Equation \eqref{kinetic2}, suppressing again all dimensional indexes, becomes
+\begin{multline}
+    \dt \left\langle \tilde{\Ia}(k)\right\rangle = 4 \pi\int dk_1 dk_2 dk_3 \\
+    \Tint^2(k, k_1, k_2, k_3)\Iab(k)\Iab(k_1)\Iab(k_2)\Iab(k_3)
+    \left(\frac{1}{\Iab(k)} + \frac{1}{\Iab(k_1)} - \frac{1}{\Iab(k_2)}- \frac{1}{\Iab(k_3)}  \right)
+    \delta(\delomega^{k1}_{23})\delta(k + k_1 - k_2 - k_3).
+    \label{kinetic3}
+\end{multline}
+In performing the limit we must be careful to require that 
+\begin{equation}
+\underset{\epsilon, \Delta k \rightarrow 0}{\lim} \frac{(\Delta k)^d}{\epsilon} = 0 ,
+\end{equation}
+as otherwise we could not use definition \eqref{delta} to extract a delta from \eqref{kinetic1}. \\
+In the following we will recover the previous discrete notation for compactness, while still working in the continous limit.\\
 
-\hl{-Definizione nk(t), Derivazione alla onorato della 4-WKE, limite al continuo, commenti su assunzioni!, \\
-indirizza all'Appendice per metodo Poincarè lindsted. \\
--Derivazione alla Falkovich della wke, or referral to appendix}\\
+Our equation is still deterministic regarding the action function. We shall assume a stochastic distribution on the inital data defining 
+the mean value\footnote{Working with $a_k$ variables $n_k$ would be the second moment of the distribution, not the first.}
+of $\Ia_k$ respect both distribution at a generic time
+\begin{equation}
+    n(k,t) = n_k = \left\langle \Ia_k \right\rangle_{\Iab, \thab},
+\end{equation}     
+and requiring them to be uncorrelated at $t=0$ \\
+\begin{equation}
+    \left\langle \Iab_i \Iab_j \Iab_k\right\rangle_{\Iab} = 
+    \left\langle\Iab_i \right\rangle_{\Iab} \left\langle \Iab_j \right\rangle_{\Iab} \left\langle \Iab_k \right\rangle_{\Iab}
+    = \bar{n}_i \bar{n}_j \bar{n}_k \hspace{5mm} \text{for} \hspace{5mm} i\neq j\neq k, 
+\end{equation}
+basically a gaussian distribution on initial conditions \hl{JUSTIFY THIS INTUITIVELY}. Based on dimensional analysis we call 
+$n_k$ the wave action density of the system\\
+Averaging over \eqref{kinetic3} we obtain
+\begin{equation}
+    \dt n_k = 4 \pi\int dk_1 dk_2 dk_3 \\
+    \Tint^2_{k123}\nb_k\nb_1\nb_2\nb_3
+    \left(\frac{1}{\nb_k} + \frac{1}{\nb_1} - \frac{1}{\nb_2}- \frac{1}{\nb_3}  \right)
+    \delta(\delomega^{k1}_{23})\delta^{k1}_{23}.
+    \label{kinetic4}
+\end{equation}
+We find ourselves with an equation describing the time evolution of the average action value per Fourier mode, given an initial distribution.
+Unfortunately this equation holds now for a small time after $t=0$, 
+since it does not account for successive interactions between different waves. We need some form of closure. \hl{DOES IT MAKE SENSE?, THINK AGAIN}\\ 
+We make a last crucial assumption, time evolution does not spoil at successive instants the random phase and amplitude 
+assumptions on inital conditions. Intuitively we can think of the separation of time scales on which the linear and nonlinear term act as allowing for 
+the linear term to keep introducing chaos into the system. \\
+This assumption let us subsitute $\nb_k \rightarrow n(k,t) = n_k$, giving us a self-consistent integro-differential equation for the evolution of $n_k$, the celebrated
+Wave Kinetic Equation 
+\begin{equation}
+    \dt n_k = 4 \pi\int dk_1 dk_2 dk_3 \\
+    \Tint^2_{k123}n_kn_1n_2n_3
+    \left(\frac{1}{n_k} + \frac{1}{n_1} - \frac{1}{n_2}- \frac{1}{n_3}  \right)
+    \delta(\delomega^{k1}_{23})\delta^{k1}_{23}.
+    \label{kinetic}
+\end{equation}
+Given that we are assuming gaussian statistics, but at the same time letting the mean values vary with time through interactions among modes
+it is customary to call the approximation quasi-gaussian. \\ 
+
 \subsection{Some properties of the kinetic equation}
 
 \hl{-Proprietà WKE :Irreversibilità, dimostrazione del teorema H, leggi di conservazione e equazioni di continuità}

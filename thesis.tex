@@ -25,12 +25,13 @@
 %to have the fourier font (very nice) without it uses computern modern
 \usepackage{fourier}
 %\usepackage{newtxtext,newtxtext}
+
 %to set the old school smooth p22 font (locally sourced)
 \usepackage{fontspec}
-\setmainfont{P22MayflowerSmooth}[
-    Path = ./fontchosen/,
-    Extension = .ttf
-]
+%\setmainfont{P22MayflowerSmooth}[
+%    Path = ./fontchosen/,
+%    Extension = .ttf
+%]
 
 %%%%%%%%%%%MATH SETTINGS%%%%%%%%%%%%%%%%%
 %to have better math formatting
@@ -44,11 +45,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %to manage the geometry of the page (will have to find a way to increase alterned margins to allow for double printed binding)
-\usepackage[top=2.5 cm, bottom=2 cm, left=2 cm,right=2 cm]{geometry}
+\usepackage[top=2.5 cm, bottom=2.5 cm, left=2.5 cm,right=2.5 cm]{geometry}
 
 %to manage itemize lists
 \usepackage{enumitem}
-\setlist[itemize,1]{label=\textbf{\dagger}}
+%\setlist[itemize,1]{label=\textbf{*}}
+
+%to remove indentation
+\setlength{\parindent}{0pt}
 
 %what does it do?
 \usepackage{bookmark}
@@ -120,7 +124,7 @@
 %to define the standard for sections titles and subtitles
 \usepackage[explicit]{titlesec}
 \titleformat{\section}{\centering\huge\bfseries}{}{6pt}{#1}
-\titleformat{\subsection}{\bfseries\Large}{\upshape\thesubsection}{6pt}{#1}
+\titleformat{\subsection}{\bfseries}{\upshape\thesubsection}{6pt}{#1}
 %\itshape for italics
 %to adjust the spacing of the section (i call them chapters) header
 %Add a \vphantom{} before each title section otherwise it does not consider the spacing from the header
@@ -197,7 +201,11 @@
 \newcommand{\delthetab}{\Delta\bar{\theta}}
 %delta of Omegas
 \newcommand{\delOmegab}{\Delta\bar{\Omega}}
+%delta of omegas
+\newcommand{\delomega}{\Delta{\omega}}
 
+%n
+\newcommand{\nb}{\bar{n}}
 
 \begin{document}
 

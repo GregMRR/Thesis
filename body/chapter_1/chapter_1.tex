@@ -18,7 +18,8 @@ we greatly borrow from the exceptional treatment in \cite{Zakharov}. \\
 già risultato di sviluppo pertubativo (come per le onde oceaniche) e scrittura in spazio-k con 3 onde e 4 onde, simmetrie continue e discrete }\\
 
 \hl{to the appendix: - Idea Onorato oscillatore armonico per giustificare nonrisonanza e commento su trasfomrazione canonica per eliminare termini 
-non risonanti (indirizza ad appendice per conto specifico), cita sistemi fisici in cui l'eq è a 4 onde} \\
+non risonanti (indirizza ad appendice per conto specifico), cita sistemi fisici in cui l'eq è a 4 onde
+parti da spazio fourier e analizza bene dimensionalmente la hamiltoniana e le sue componenti} \\
 
 Our final Hamiltonian is 
 \begin{equation}
@@ -50,7 +51,7 @@ obtaining
 \begin{equation}
     \Ham = \sum_k \omga_k \Ia_k + \frac{\epsilon}{2} \sum_{k123}\Tint_{k123}\sqrt{\Ia_k\Ia_1\Ia_2\Ia_3}e^{i(\theta_k + \theta_1 - \theta_2 - \theta_3)}\delta^{k1}_{23},
 \end{equation}
-by assuming that $\Tint \in \mathbb{R}$ (as is the case in a vast class of physical systems) the requirement that $\Ham \in \mathbb{R}$ implies 
+by assuming that $\Tint \in \mathbb{R}$ (as is the case in a vast class of physical systems), $\Ham \in \mathbb{R}$ implies 
 \begin{equation}
     \Ham = \sum_k \omga_k \Ia_k + \frac{\epsilon}{2} \sum_{k123}\Tint_{k123}\sqrt{\Ia_k\Ia_1\Ia_2\Ia_3}\cos(\deltheta^{k1}_{34})\delta^{k1}_{23},
 \end{equation}
@@ -253,14 +254,14 @@ into \eqref{kinetic1} togheter with \eqref{kineticexp} and the assumption that e
     \label{kinetic2}
 \end{equation}
 There are some important remarks on this last equation. \\
-The presence of the Dirac's delta defines a resonance manifold\footnote{even if at this discrete stage $\delomega$ is not a function over $\mathcal{R}$ yet,
+The presence of the Dirac's delta defines a resonance manifold\footnote{even if at this discrete stage $\delomega$ is not a function over $\mathbb{R}$ yet,
  and should be argued to be densely valued around $0$ in the continuum limit} of the Fourier modes $k_1, k_2$ and $k_3$ interacting with $k$, 
  showing that only resonant term contribute to the net interaction between different modes\footnote{
     This can be seen as an a posteriori justification for the elimination of nonresonant three wave interaction terms.
 }. \\
 Based on difference preferences one could define a nonlinear time $\tau = t \epsilon^2$, as in \cite{Onorato2020}, and absorb the 
 $\epsilon^2$ term into the time derivative or just include it again into $\Tint$, we opt for the latter and will not write it explicitely in the future. \\
-The equation can be readily extended to the case $\Tint \in \mathcal{C}$ through the substitution $\Tint^2 \rightarrow |\Tint|^2$.\\
+The equation can be readily extended to the case $\Tint \in \mathbb{C}$ through the substitution $\Tint^2 \rightarrow |\Tint|^2$.\\
 We solved the problem of initial conditions on the phases but not yet on the action variables and we are still dealing with infinite sums, since we defined our system
 in a finite coordinate space. The next section builds on this. 
 
@@ -268,7 +269,7 @@ in a finite coordinate space. The next section builds on this.
 We now take the thermodynamic (continuum) limit ($L \rightarrow \infty$) to turn our set of infinitely many coupled equation into an integral one, easier to approach analytically.
 In Fourier space the limit takes the form 
 \begin{equation}
-    \vec{\Delta k} = \frac{2\pi}{L} \rightarrow 0 \hspace{10mm} \Lambda^* \rightarrow \mathcal{R}^d
+    \vec{\Delta k} = \frac{2\pi}{L} \rightarrow 0 \hspace{10mm} \Lambda^* \rightarrow \mathbb{R}^d
 \end{equation}
 and we define 
 \begin{equation}
@@ -278,7 +279,7 @@ and we define
 The action variables and interaction coefficents become functions of the now continuous coordinates of Fourier space, the sums turn into integrals and the Kroenecker's deltas become a
 Dirac's delta. Equation \eqref{kinetic2}, suppressing again all dimensional indexes, becomes
 \begin{multline}
-    \dt \left\langle \tilde{\Ia}(k)\right\rangle = 4 \pi\int dk_1 dk_2 dk_3 \\
+    \pt \left\langle \tilde{\Ia}(k)\right\rangle = 4 \pi\int dk_1 dk_2 dk_3 \\
     \Tint^2(k, k_1, k_2, k_3)\Iab(k)\Iab(k_1)\Iab(k_2)\Iab(k_3)
     \left(\frac{1}{\Iab(k)} + \frac{1}{\Iab(k_1)} - \frac{1}{\Iab(k_2)}- \frac{1}{\Iab(k_3)}  \right)
     \delta(\delomega^{k1}_{23})\delta(k + k_1 - k_2 - k_3).
@@ -304,10 +305,10 @@ and requiring them to be uncorrelated at $t=0$ \\
     = \bar{n}_i \bar{n}_j \bar{n}_k \hspace{5mm} \text{for} \hspace{5mm} i\neq j\neq k, 
 \end{equation}
 basically a gaussian distribution on initial conditions \hl{JUSTIFY THIS INTUITIVELY}. Based on dimensional analysis we call 
-$n_k$ the wave action density of the system\\
+$n_k$ the wave action density of the system\footnote{$\Nwav = \int n_k dk$ has the units of an action.}.\\
 Averaging over \eqref{kinetic3} we obtain
 \begin{equation}
-    \dt n_k = 4 \pi\int dk_1 dk_2 dk_3 \\
+    \pt n_k = 4 \pi\int dk_1 dk_2 dk_3 \\
     \Tint^2_{k123}\nb_k\nb_1\nb_2\nb_3
     \left(\frac{1}{\nb_k} + \frac{1}{\nb_1} - \frac{1}{\nb_2}- \frac{1}{\nb_3}  \right)
     \delta(\delomega^{k1}_{23})\delta^{k1}_{23}.
@@ -315,34 +316,72 @@ Averaging over \eqref{kinetic3} we obtain
 \end{equation}
 We find ourselves with an equation describing the time evolution of the average action value per Fourier mode, given an initial distribution.
 Unfortunately this equation holds now for a small time after $t=0$, 
-since it does not account for successive interactions between different waves. We need some form of closure. \hl{DOES IT MAKE SENSE?, THINK AGAIN}\\ 
+since it does not account for successive interactions between different waves. We need some form of closure. \hl{DOES IT MAKE SENSE?, THINK AGAIN. LOOK ON ZAKH HOW HE JUSTIFY THIS}\\ 
 We make a last crucial assumption, time evolution does not spoil at successive instants the random phase and amplitude 
 assumptions on inital conditions. Intuitively we can think of the separation of time scales on which the linear and nonlinear term act as allowing for 
 the linear term to keep introducing chaos into the system. \\
 This assumption let us subsitute $\nb_k \rightarrow n(k,t) = n_k$, giving us a self-consistent integro-differential equation for the evolution of $n_k$, the celebrated
-Wave Kinetic Equation 
+Wave Kinetic Equation (WKE)
 \begin{equation}
-    \dt n_k = 4 \pi\int dk_1 dk_2 dk_3 \\
+    \pt n_k = 4 \pi\int dk_1 dk_2 dk_3 \\
     \Tint^2_{k123}n_kn_1n_2n_3
     \left(\frac{1}{n_k} + \frac{1}{n_1} - \frac{1}{n_2}- \frac{1}{n_3}  \right)
     \delta(\delomega^{k1}_{23})\delta^{k1}_{23}.
     \label{kinetic}
 \end{equation}
-Given that we are assuming gaussian statistics, but at the same time letting the mean values vary with time through interactions among modes
-it is customary to call the approximation quasi-gaussian. The l.h.s.
+Given that we are assuming gaussian statistics, but at the same time letting the mean values of the infinite distributions at every point k 
+vary with time depending on each other values, it is customary to call the approximation quasi-gaussian. The l.h.s. is often called the collisional integral, again 
+for the reason that it quantifies the interactions among different modes, and represented through the symbol $\coll$.
 
-\subsection{Some properties of the kinetic equation}
+\subsection{Main properties of the kinetic equation}
+\hl{CONSERVATION LAWS (E, N ,GENERICA RHO), IRREVERSIBILITÀ}\\
+The Microscopic Hamiltonian \eqref{ham4} conserves energy, momentum and wave number (or wave action) as a consequence of its invariance under time translation,
+space translation and phase shifting\footnote{A three wave interaction would not conserve the wave action} respectively. \\
+A first question would be which of said conserved quantities are inherited by the WKE.\\
+Let us start with energy, we separe the linear and nonlinear terms in \eqref{ham4}
+\begin{equation}
+    \Ham = \Ham_2 + \Ham_{\text{int}}.
+\end{equation}
+The derivation of the kinetic equation was based off the assumption that $\Ham_{\text{int}} \ll \Ham_{2}$ and the obtained equation clearly shows that at $\epsilon^2$ 
+order the only role of $\Ham_{\text{int}}$ is to redistibute energy amidst modes. This is enough to hypothesize that the conserved quantity may be the average linear energy
+\begin{equation}
+    \Ewav = \left\langle \Ham_2 \right\rangle_{\Iab,\thab} = \int \omega_k n_k dk.
+\end{equation}
+Its conservation may be easily checked by utilizing \eqref{kinetic} 
+\begin{align}
+    &\dt \Ewav = \int \omega_k \pt n_k dk = \int \omega_k \coll dk = \label{encons}\\
+    4 &\pi\int  dk dk_1 dk_2 dk_3 
+    \Tint^2_{k123}n_kn_1n_2n_3 \omega_k
+    \left(\frac{1}{n_k} + \frac{1}{n_1} - \frac{1}{n_2}- \frac{1}{n_3}  \right)
+    \delta(\delomega^{k1}_{23})\delta^{k1}_{23} = \\
+    &\pi\int  dk dk_1 dk_2 dk_3 
+    \Tint^2_{k123}n_kn_1n_2n_3\left(\omega_k + \omega_1 - \omega_2 - \omega_3\right)
+    \left(\frac{\omega_k}{n_k} + \frac{\omega_1}{n_1} - \frac{\omega_k}{n_2}- \frac{\omega_k}{n_3}  \right)
+    \delta(\delomega^{k1}_{23})\delta^{k1}_{23} = 0.    
+\end{align}
+The simmetry properties of $\Tint$ and the rest of the integrand were exploited to properly rename the dummy integrated variables. The delta function over frequencies 
+allows to determine that the integral is null. It is crucial to remember that the usage of the delta function is allowed only if the integral converges, such condition
+must be checked case by case and thus conservation of energy is not to be taken for granted\footnote{See \cite{Zakharov} for a more detailed analysis.}. \\
+Defining the energy density as $\Edens_k = \omega_k n_k$, we cast \eqref{encons} as a continuity equation
+\begin{align}
+    &\pt \Edens_k + \vec{\nabla}\cdot\vec{\Pflux} = 0 \label{Econtinuity}\\
+    &\vec{\nabla}\cdot\vec{\Pflux} = -\omega_k \coll, 
+\end{align}
+where $\Pflux$ is the energy flux and the vector signs were made e to xplicit to avoid ambiguity with future notation. \\
 
-\hl{-Proprietà WKE :Irreversibilità, dimostrazione del teorema H, leggi di conservazione e equazioni di continuità}
-
+We now move on to wave action conservation, given the original simmetry it is reasonable to assume that the new conserved quantity is 
+\begin{equation}
+    \Nwav = \int n_k dk.
+\end{equation}
+ 
 \subsection{Equilibrium stationary state}
 
 -Equilibrium solutions and comments 
 
 \subsection{Out of equilibrium stationary states}
-
+\hl{QUESTA PARTE VA FATTA BENE, VA PROGRAMMATA COORDINATA CON MMT!!}
 -Out of Equilibrium solutions and comments, argomento fjortoft, argomento zakharov, misto dei due con commenti su forzante e dissipazione 
-ed esempi fisici, ragionamenti dimensionali su forme approssimate di lambda e omega e forme generiche di esponenti, definizioni costanti di KZ e commenti su cnvergenza e 
-trasformata zakh un pò di foto di cascate per sistemi fisici NON MMT
+ed esempi fisici, ragionamenti dimensionali su forme approssimate di lambda e omega e forme generiche di esponenti e finestra di località, definizioni costanti di KZ e commenti su cnvergenza e 
+trasformata zakh (forse è il caso di presentarla solo in MMT? bouch) un pò di foto di cascate per sistemi fisici NON MMT
 
 \subsection{Convergence issues (MAYBE)}

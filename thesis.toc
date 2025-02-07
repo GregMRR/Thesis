@@ -4,10 +4,10 @@
 \contentsline {subsection}{\numberline {\textsection 1.3}Perturbation Theory}{4}{subsection.0.1.3}%
 \contentsline {subsection}{\numberline {\textsection 1.4}Random Phase Approximation}{7}{subsection.0.1.4}%
 \contentsline {subsection}{\numberline {\textsection 1.5}Statistics over the actions and the thermodynamic limit}{9}{subsection.0.1.5}%
-\contentsline {subsection}{\numberline {\textsection 1.6}Some properties of the kinetic equation}{11}{subsection.0.1.6}%
-\contentsline {subsection}{\numberline {\textsection 1.7}Equilibrium stationary state}{11}{subsection.0.1.7}%
-\contentsline {subsection}{\numberline {\textsection 1.8}Out of equilibrium stationary states}{11}{subsection.0.1.8}%
-\contentsline {subsection}{\numberline {\textsection 1.9}Convergence issues (MAYBE)}{11}{subsection.0.1.9}%
-\contentsline {section}{\numberline {II}Beyond the leading order}{12}{section.0.2}%
-\contentsline {section}{\numberline {III}A one dimensional model for Wave Turbulence}{13}{section.0.3}%
-\contentsline {section}{\numberline {IV}Numerical study of the Wave Kinetic Equation}{14}{section.0.4}%
+\contentsline {subsection}{\numberline {\textsection 1.6}Main properties of the kinetic equation}{11}{subsection.0.1.6}%
+\contentsline {subsection}{\numberline {\textsection 1.7}Equilibrium stationary state}{12}{subsection.0.1.7}%
+\contentsline {subsection}{\numberline {\textsection 1.8}Out of equilibrium stationary states}{12}{subsection.0.1.8}%
+\contentsline {subsection}{\numberline {\textsection 1.9}Convergence issues (MAYBE)}{12}{subsection.0.1.9}%
+\contentsline {section}{\numberline {II}Beyond the leading order}{13}{section.0.2}%
+\contentsline {section}{\numberline {III}A one dimensional model for Wave Turbulence}{14}{section.0.3}%
+\contentsline {section}{\numberline {IV}Numerical study of the Wave Kinetic Equation}{15}{section.0.4}%

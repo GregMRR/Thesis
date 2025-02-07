@@ -41,6 +41,7 @@
 
 %to have math font serif
 \usepackage{amsfonts}
+\usepackage[mathscr]{euscript}
 %\usepackage[mathrm=sym]{unicode-math}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -169,8 +170,14 @@
 \newcommand{\dt}{\frac{d}{dt}}
 
 %hamiltonian
-\newcommand{\Ham}{\mathcal{H}}
-
+\newcommand{\Ham}{\mathrm{H}}
+%wave action
+\newcommand{\Nwav}{\mathrm{N}}
+%Energy
+\newcommand{\Ewav}{\mathrm{E}}
+\newcommand{\Edens}{\mathscr{E}}
+%Flux
+\newcommand{\Pflux}{\mathrm{P}}
 %interaction term
 \newcommand{\Tint}{\mathrm{T}}
 
@@ -206,6 +213,8 @@
 
 %n
 \newcommand{\nb}{\bar{n}}
+%collisional integral
+\newcommand{\coll}{\mathscr{I}\left\{n_k\right\}}
 
 \begin{document}
 

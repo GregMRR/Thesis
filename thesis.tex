@@ -6,6 +6,10 @@
 \usepackage{svg}  
 \usepackage{graphicx}  
 \usepackage{transparent}
+%to comment figures
+\usepackage{float}
+%to wrap figure in text
+\usepackage{wrapfig}
 %to handle overlaying text
 \usepackage[absolute,overlay]{textpos} 
 
@@ -18,7 +22,7 @@
 \hypersetup{
     colorlinks,
     linkcolor=black,
-    citecolor={blue!50!black},
+    citecolor=black,
     urlcolor={blue!80!black}
 }
 
@@ -27,12 +31,14 @@
 %\usepackage{newtxtext,newtxtext}
 
 %to set the old school smooth p22 font (locally sourced)
-\usepackage{fontspec}
+%\usepackage{fontspec}
 %\setmainfont{P22MayflowerSmooth}[
 %    Path = ./fontchosen/,
 %    Extension = .ttf
 %]
 
+%to comment mutiple lines
+\usepackage{comment}
 %%%%%%%%%%%MATH SETTINGS%%%%%%%%%%%%%%%%%
 %to have better math formatting
 \usepackage{amsmath}
@@ -173,11 +179,15 @@
 \newcommand{\Ham}{\mathrm{H}}
 %wave action
 \newcommand{\Nwav}{\mathrm{N}}
+%Entropy
+\newcommand{\Ent}{\mathrm{S}}
 %Energy
 \newcommand{\Ewav}{\mathrm{E}}
 \newcommand{\Edens}{\mathscr{E}}
+\newcommand{\Edensis}{\tilde{\mathscr{E}}}
 %Flux
 \newcommand{\Pflux}{\mathrm{P}}
+\newcommand{\Qflux}{\mathrm{Q}}
 %interaction term
 \newcommand{\Tint}{\mathrm{T}}
 
@@ -214,7 +224,8 @@
 %n
 \newcommand{\nb}{\bar{n}}
 %collisional integral
-\newcommand{\coll}{\mathscr{I}\left\{n_k\right\}}
+\newcommand{\coll}{\mathtt{I}\left\{n_k\right\}}
+\newcommand{\collad}{\tilde{\mathtt{I}}}
 
 \begin{document}
 
@@ -258,6 +269,10 @@
 \bibliographystyle{siam}  
 \bibliography{body/chapter_1/chapter1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%APPENDIX%%%%%%%%%%%%%%%%%%%
+
 \end{document}
 
 

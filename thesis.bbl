@@ -1,5 +1,8 @@
 \begin{thebibliography}{1}
 
+\bibitem{1991}
+Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences, 434 (1991), p.~9–13.
+
 \bibitem{Nazarenko2011}
 {\sc S.~Nazarenko}, {\em Wave Turbulence}, Springer Berlin Heidelberg, 2011.
 
@@ -8,5 +11,8 @@
 
 \bibitem{Zakharov}
 {\sc G.~F. VE.~Zakharov and V.~LVov}, {\em Kolmogorov Spectra of Turbulence I}, Springer-Verlag, 1992.
+
+\bibitem{Zakharov1965}
+{\sc V.~E. Zakharov}, {\em Weak turbulence in media with a decay spectrum}, Journal of Applied Mechanics and Technical Physics, 6 (1965), p.~22–24.
 
 \end{thebibliography}

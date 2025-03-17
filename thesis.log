@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2024.9.26)  15 MAR 2025 18:00
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2024.9.26)  17 MAR 2025 23:49
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/home/greg/Desktop/TESI/Scrittura_tesi/Thesis/thesis
@@ -1140,10 +1140,10 @@ File: images/2pointsoneloop.jpg Graphic file (type jpg)
 Package luatex.def Info: images/2pointsoneloop.jpg  used on input line 337.
 (luatex.def)             Requested size: 239.00558pt x 90.908pt.
 
-Underfull \vbox (badness 3098) has occurred while \output is active []
+Underfull \vbox (badness 2726) has occurred while \output is active []
 
  [31<./images/2pointsoneloop.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 380--387
+Underfull \hbox (badness 10000) in paragraph at lines 381--388
 
  []
 
@@ -1154,38 +1154,74 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <images/quarticvertex.jpg, id=541, 3153.7825pt x 3042.36626pt>
 File: images/quarticvertex.jpg Graphic file (type jpg)
 <use images/quarticvertex.jpg>
-Package luatex.def Info: images/quarticvertex.jpg  used on input line 392.
+Package luatex.def Info: images/quarticvertex.jpg  used on input line 393.
 (luatex.def)             Requested size: 159.33301pt x 153.65916pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--416
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
 
  []
 
 
-Underfull \vbox (badness 4254) has occurred while \output is active []
+Underfull \vbox (badness 3965) has occurred while \output is active []
 
  [33<./images/quarticvertex.jpg>]
-<images/schanneloneloop.jpg, id=555, 4517.87875pt x 3651.6425pt>
+<images/schanneloneloop.jpg, id=554, 4517.87875pt x 3651.6425pt>
 File: images/schanneloneloop.jpg Graphic file (type jpg)
 <use images/schanneloneloop.jpg>
 Package luatex.def Info: images/schanneloneloop.jpg  used on input line 422.
 (luatex.def)             Requested size: 159.33301pt x 128.76778pt.
-<images/tchanneloneloop.jpg, id=556, 4517.87875pt x 3651.6425pt>
+<images/tchanneloneloop.jpg, id=555, 4517.87875pt x 3651.6425pt>
 File: images/tchanneloneloop.jpg Graphic file (type jpg)
 <use images/tchanneloneloop.jpg>
 Package luatex.def Info: images/tchanneloneloop.jpg  used on input line 423.
 (luatex.def)             Requested size: 159.33301pt x 128.76778pt.
-<images/uchanneloneloop.jpg, id=557, 4517.87875pt x 3618.51875pt>
+<images/uchanneloneloop.jpg, id=556, 4517.87875pt x 3618.51875pt>
 File: images/uchanneloneloop.jpg Graphic file (type jpg)
 <use images/uchanneloneloop.jpg>
 Package luatex.def Info: images/uchanneloneloop.jpg  used on input line 424.
 (luatex.def)             Requested size: 159.33301pt x 127.59973pt.
-<images/sexticdiagram.jpg, id=558, 4517.87875pt x 1762.585pt>
+ [34<./images/schanneloneloop.jpg><./images/tchanneloneloop.jpg><./images/uchanneloneloop.jpg>]
+Overfull \hbox (0.62749pt too wide) in paragraph at lines 461--464
+\T1/futs/m/n/10.95 us-ing iden-ti-ties []-[], is a te-dious but straight-for-ward pro-cess. []FORSE[] [][][]AG[]-[]GIUNGI[]
+ []
+
+
+Overfull \hbox (12.65811pt too wide) detected at line 477
+ []$[] [] \FML/futmi/m/it/10.95 :$ []  
+ []
+
+[35]
+Overfull \hbox (13.4719pt too wide) detected at line 502
+ []$[] [] \FML/futmi/m/it/10.95 :$ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--505
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--508
+
+ []
+
+<images/sexticdiagram.jpg, id=589, 4517.87875pt x 1762.585pt>
 File: images/sexticdiagram.jpg Graphic file (type jpg)
 <use images/sexticdiagram.jpg>
-Package luatex.def Info: images/sexticdiagram.jpg  used on input line 430.
+Package luatex.def Info: images/sexticdiagram.jpg  used on input line 511.
 (luatex.def)             Requested size: 199.1693pt x 77.6992pt.
-) (./body/chapter_3/chapter_3.tex [34<./images/schanneloneloop.jpg><./images/tchanneloneloop.jpg><./images/uchanneloneloop.jpg><./images/sexticdiagram.jpg>]) (./body/chapter_4/chapter_4.tex [35]) [36] (./thesis.bbl) [37
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36<./images/sexticdiagram.jpg>]
+Overfull \hbox (3.40038pt too wide) detected at line 583
+[][][][][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]) (./body/chapter_3/chapter_3.tex [38]) (./body/chapter_4/chapter_4.tex [39]) [40] (./thesis.bbl) [41
 
 
 Missing character: There is no – (U+2013) in font futr8t!
@@ -1200,14 +1236,16 @@ L3 programming layer <2024-01-22>
 )
 
 Here is how much of LuaTeX's memory you used:
- 29050 strings out of 476553
+ 29084 strings out of 476553
  125016,1977958 words of node,token memory allocated
- 1979 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 35 glue, 4 kern, 8 sub_mlist, 27 glyph, 259 attribute, 57 glue_spec, 259 attribute_list, 2 write nodes
-   avail lists: 1:8,2:2776,3:1046,4:436,5:738,6:85,7:6816,8:106,9:1329,10:10,11:498
- 49790 multiletter control sequences out of 65536+600000
+ 2416 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 36 glue, 4 kern, 29 sub_mlist, 43 glyph, 325 attribute, 57 glue_spec, 325 attribute_list, 2 write nodes
+   avail lists: 1:8,2:2646,3:1025,4:436,5:802,6:85,7:6799,8:106,9:2261,10:10,11:502
+ 49803 multiletter control sequences out of 65536+600000
  133 fonts using 8085487 bytes
- 94i,13n,97p,838b,1885s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,14n,97p,838b,1885s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'Hfootnote.33'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.32'
 
@@ -1273,10 +1311,10 @@ warning  (pdf backend): unreferenced destination with name 'Hfootnote.2'
 
 warning  (pdf backend): unreferenced destination with name 'Hfootnote.1'
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-mcl.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on thesis.pdf (37 pages, 6007959 bytes).
+Output written on thesis.pdf (41 pages, 6033561 bytes).
 
-PDF statistics: 680 PDF objects out of 1000 (max. 8388607)
- 610 compressed objects within 7 object streams
- 244 named destinations out of 1000 (max. 131072)
+PDF statistics: 745 PDF objects out of 1000 (max. 8388607)
+ 671 compressed objects within 7 object streams
+ 265 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 

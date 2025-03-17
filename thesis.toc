@@ -11,6 +11,6 @@
 \contentsline {subsection}{\numberline {\textsection 2.2}Feynman rules}{28}{subsection.0.2.2}%
 \contentsline {subsection}{\numberline {\textsection 2.3}Two points functions}{31}{subsection.0.2.3}%
 \contentsline {subsection}{\numberline {\textsection 2.4}4-points functions}{33}{subsection.0.2.4}%
-\contentsline {subsection}{\numberline {\textsection 2.5}Higher order kinetic equation}{34}{subsection.0.2.5}%
-\contentsline {section}{\numberline {III}A one dimensional model for Wave Turbulence}{35}{section.0.3}%
-\contentsline {section}{\numberline {IV}Numerical study of the Wave Kinetic Equation}{36}{section.0.4}%
+\contentsline {subsection}{\numberline {\textsection 2.5}Higher order kinetic equation}{38}{subsection.0.2.5}%
+\contentsline {section}{\numberline {III}A one dimensional model for Wave Turbulence}{39}{section.0.3}%
+\contentsline {section}{\numberline {IV}Numerical study of the Wave Kinetic Equation}{40}{section.0.4}%
